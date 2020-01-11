@@ -1,0 +1,10 @@
+- name: Install docker
+  hosts: webserver1
+  gather_facts: false
+  become: true
+
+  tasks:
+    - name: Install yum package
+      yum:
+        name:
+          - docker
