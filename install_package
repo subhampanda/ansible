@@ -13,4 +13,10 @@
       name: wget
       state: absent
 
+or
+  -
+   name: "creating  dummy project"
+   yum: name=wget  state=latest
+   
+
 
