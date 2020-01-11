@@ -1,10 +1,16 @@
-- name: Install docker
-  hosts: webserver1
-  gather_facts: false
-  become: true
+-
+ name: "this is our  first play"
+ hosts: webserver1
+ gather_facts: false
+ become: true
+ tasks:
+  -
+   name: "creating  dummy project"
+   command: touch sangam.txt
+  -
+   name: "creating   nginx insyall"
+   yum:
+      name: wget
+      state: absent
 
-  tasks:
-    - name: Install yum package
-      yum:
-        name:
-          - docker
+
