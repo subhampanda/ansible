@@ -1,0 +1,7 @@
+-
+ name: "this is our  first play"
+ hosts: webserver
+ tasks:
+  -
+   name: "creating  dummy project"
+   copy: src=ram.txt   dest=/home/ansadmin
