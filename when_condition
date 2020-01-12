@@ -1,0 +1,16 @@
+-
+ name: "this is my first play"
+ gather_facts: false
+ become: true
+ hosts: webserver1
+ vars:
+   ansile_distribution: centos
+ tasks:
+   -
+     name: "this is  a play"
+     apt: name=apache2 state=present
+     when:  ansile_distribution == 'ubuntu'
+   -
+     name: "this is  a play"
+     yum: name=httpd state=present
+     when:  ansile_distribution == 'centos'
