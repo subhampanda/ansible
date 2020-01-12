@@ -1,12 +1,19 @@
 variable.yml
-
+-------------------
 var1: var1
 var2: var2
 var3: var3
+-----------------------------------------------------------------------------------
+task.yml
+------------
+-
+    name: "this is subham"
+    command: touch /home/ansadmin/{{ var1 }}.txt
 
 
+-----------------------------------------------------------------------------------
 play.yml
-
+---------
  name: "this is my first play"
  hosts: webserver1
  vars_files:
@@ -15,3 +22,15 @@ play.yml
   -
     name: "this is subham"
     command: touch /home/ansadmin/{{ var1 }}.txt
+--------------------------------------------------------------------------------------------
+play.yml
+-----------
+-
+ name: "this is my first play"
+ hosts: webserver1
+ vars_files:
+   - variable.yml
+   - variable.yml
+ tasks:
+  - include: task.yml
+  - include: task.yml
