@@ -1,0 +1,24 @@
+yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+yum instll  -y  python  python-devel python-pip openssl ansible
+ansible --version
+
+vi  /etc/ansible/hosts
+[demo]                      [in server only]
+private-ip
+private-ip
+
+adduser  ansible         [in  all  machines ]
+passwd  ansible
+
+vi /etc/ssh/sshd_config
+---------------------------
+permit rootlogin no  (no comment)        [in  all  machines ]
+password authentation yes  (no comment)
+password authentation no  ( comment)
+permitRootlogin  no ( comment)
+
+su ansible                            [in server only]
+ssh prvavte-ip
+
+ 
+ssh-copy-id  prvavte-ip              [in server only]
