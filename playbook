@@ -1,0 +1,9 @@
+ansible vs chef
+
+Playbook  -  Recipe
+Module    -  Resource
+Host      -  Node
+Setup     -  Ohai
+Ssh       -  Knife
+Push      -  Pull
+
