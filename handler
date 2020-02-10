@@ -1,0 +1,12 @@
+---
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name: install Httpd server on centos7    [two  spece one - one space  from task  line]
+      action:  yum name=httpd state=installed
+      notify:  restart  HTTPD
+  Handlers:                                       [notify  and name both must  be  same ]
+    - name:   restart  HTTPD
+      action:  service  name=httpd state=restarted
