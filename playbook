@@ -10,10 +10,10 @@ Push      -  Pull
 --- # my  first  ymal  file
 - hosts: demo           [ group ]
   user:  ansible        [ user-name]
-  become: yes           [ root use r]
+  become: yes           [ root user]
   connection:  ssh      [ cmd ]
   tasks: 
-    - name: install HTTPD on centos7
+    - name: install HTTPD on centos7          
       action: yum  name=httpd state=installed
     - name: install MYSQL  on  centos7
       action: yum name=mysql state=installed
