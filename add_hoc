@@ -1,0 +1,50 @@
+cd /etc/ansible/host
+[demo]
+private ip
+private ip
+ 
+ansible  all  --list-host       [all-  all   node groups ]  [for  all hosts]
+ansible demo  --list-host       [demo  all node in demo  group]
+ansible  demo[0]  --list-host  [ 1  node in  demo  group]
+ansible  demo[1]  --list-host   [ 2  node in  demo  group]
+ansible  demo[-1]  --list-host   [ 2  node in  demo  group]
+
+-a  [aribatry cmd]
+
+ansible demo   -a  "ls"  [all  files   in all  node ]
+ansible demo   -a  "touch  all files"  [all  files   in all  node ]
+ansible demo   -a  "touch   myfile"  [all  files   in all  node ]
+ansible demo   -a  "yum  install httpd -y"  [shows permission  denied]
+
+-b  [sudo  user]
+
+
+ansible demo  -b    -a  "yum  install httpd -y" 
+ansible demo  -b    -a  "yum  remove  httpd -y" 
+
+ansible group[host]  -b <sudo>    -m <module>  -a  <cmd>  "yum  install httpd -y" 
+
+ansible demo  -b    -m    copy  -a  "src=test.txt    dest=/tmp/ "   [no  need  file  name ]
+
+
+
+ansible demo  -b    -m    yum   -a  "pkg=httpd    state=present"  [present -it  will install]
+ansible demo  -b    -m    yum   -a  "pkg=httpd    state=latest"   [latest -it  will update]
+ansible demo  -b    -m    yum   -a  "pkg=httpd    state=absent"   [absent -it  will  uninstall]
+
+
+
+ansible demo  -b    -m    service   -a  "pkg=httpd    state=present"  [start the  service
+ansible demo  -b    -m    service   -a  "pkg=httpd    state=latest"   [restarted   the service]
+ansible demo  -b    -m    service   -a  "pkg=httpd    state=absent"   [stop  the service]
+
+
+ansible demo  -b    -m    user   -a  "name=raj"
+ansible demo  -b    -m    user   -a  "name=raj    state=absent"
+
+ansible demo     -m   setup    [for all details]
+
+
+ansible demo     -m   setup   -a  'filter=*ipv4*'
+
+
