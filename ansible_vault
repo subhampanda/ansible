@@ -1,3 +1,12 @@
+ansible-vault  create  playbook.yml
+ansible-vault  edit  playbook.yml
+ansible-vault  rekey  playbook.yml
+ansible-vault  decrypt  playbook.yml
+ansible-vault   encrypt  playbook.yml
+
+
+
+
 ansible-vault encrypt inventory.txt  --output   enc_inven.txt
 ansible-vault     view  enc_inven.txt
  ansible-playbook  -i  enc_inven.txt    play.yml    --ask-vault-pass
