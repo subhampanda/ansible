@@ -12,7 +12,7 @@ passwd  ansible
 
 visudo
 
-ansible         ALL=(ALL)       NOPASSWD: ALL      [in  all  machines ]
+ansible         ALL=(ALL)       NOPASSWD: ALL
 
 
 
@@ -29,8 +29,9 @@ ssh prvavte-ip
 
 ssh-copy-id  prvavte-ip              [in server only]
 
+
+file/folder  transfer
+
 scp  /home/ansible/su.txt  ansible@172.31.23.123:/home/ansible
-scp   -r  /home/ansible/subh  ansible@172.31.23.123:/home/ansible
-
-
-
+scp   -r  /home/ansible/subh  ansible@172.31.23.123:/home/ansible 
+ 
