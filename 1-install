@@ -10,6 +10,12 @@ private-ip
 adduser  ansible         [in  all  machines ]
 passwd  ansible
 
+visudo
+
+ansible         ALL=(ALL)       NOPASSWD: ALL
+
+
+
 vi /etc/ssh/sshd_config
 ---------------------------
 permit rootlogin no  (no comment)        [in  all  machines ]
