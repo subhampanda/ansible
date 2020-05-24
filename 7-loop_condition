@@ -1,9 +1,9 @@
--
- name: "this is my first play"
- gather_facts: false
- become: true
- hosts: webserver1
- tasks:
+---
+- name: "this is my first play"
+  gather_facts: false
+  become: true
+  hosts: webserver1
+  tasks:
    - name: this is subham
      yum: name="{{ item }}"  state=present
      with_items:
