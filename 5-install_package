@@ -1,22 +1,22 @@
--
- name: "this is our  first play"
- hosts: webserver1
- gather_facts: false
- become: true
- tasks:
-  -
-   name: "creating  dummy project"
-   command: touch sangam.txt
-  -
-   name: "creating   nginx insyall"
+--- name: "this is our  first play"
+    hosts: webserver1
+    gather_facts: false
+    become: true
+    tasks:
+      - name: "creating  dummy project"
+        command: touch sangam.txt
+      - name: "creating   nginx insyall"
+        yum: name=wget  state=latest
+      - name: "creating  dummy project"
+        yum: name=wget  state=latest
+
+   
+   
+   
    yum:
       name: wget
       state: absent
 
-or
-  -
-   name: "creating  dummy project"
-   yum: name=wget  state=latest
-   
+     
 
 
