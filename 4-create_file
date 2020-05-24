@@ -1,12 +1,11 @@
 playook.yml
 
--
- name: "this is our  first play"
- hosts: webserver
- tasks:
-  -
-   name: "creating  dummy project"
-   command: touch sangam.txt
+---  
+- name: "this is our  first play"
+  hosts: webserver
+  tasks:
+    - name: "creating  dummy project"
+      command: touch sangam.txt
 
 inventory.txt
 [webserver]
