@@ -8,6 +8,7 @@ ansible-galaxy init mysql
 cd  php 
 --------------------------------------------
 vi main.yml
+---
 - name: task
   command: touch /home/ansadmin/php.txt
 ---------------------------------------------
@@ -15,6 +16,7 @@ cd  ..[in role folder]
 
 task.yml
 ----------------------------
+---
 - name: this is our 1 st play
   hosts: webserver1
   roles:
