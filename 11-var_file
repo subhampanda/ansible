@@ -1,12 +1,10 @@
--
-
- name: "this is our  first play"
- hosts: webserver1
- gather_facts: false
- become: true
- vars:
-    servicename: suhi.txt
- tasks:
-  -
-   name: "creating   nginx insyall"
-   command: touch  /home/ansadmin/{{servicename}}
+---
+- name: "this is our  first play"
+  hosts: webserver1
+  gather_facts: false
+  become: true
+   vars:
+  servicename: suhi.txt
+  tasks:
+    - name: "creating   nginx insyall"
+      command: touch  /home/ansadmin/{{servicename}}
