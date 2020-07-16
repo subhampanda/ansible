@@ -1,0 +1,16 @@
+
+%w(openssl.cnf pkitool vars Rakefile).each do |foo|
+  template "/etc/openvpn/easy-rsa/#{foo}" do
+    source "#{foo}.erb"
+    owner 'root'
+    group 'root'
+    mode '0755'
+  end
+end
+
+
+'/etc/motd'      specifies the location in which the file is created
+'motd.erb'       specifies the name of a template that exists in in the /templates folder of a cookbook
+owner, group,    and   mode define the permissions
+
+
