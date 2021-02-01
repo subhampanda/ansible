@@ -1,0 +1,13 @@
+---
+- name:
+  hosts:
+  tasks:
+    - name:
+	  shell: echo "heloo world" > $TARGET
+	  args:
+	   chdir: /tmp
+	  environment:
+       TARGET: "{{item}}"
+      loops:
+        - test_file2 
+        - test_file3 		
